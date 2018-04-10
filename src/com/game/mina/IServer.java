@@ -10,4 +10,5 @@ public abstract interface IServer {
 	public abstract void sessionOpened(IoSession session);
 	public abstract void exceptionCaught(IoSession session,Throwable throwable);
 	public abstract void sessionIdle(IoSession session,IdleStatus idleStatus);
+	public abstract void sessionClosed(IoSession session);
 }

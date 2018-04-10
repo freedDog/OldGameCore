@@ -55,7 +55,7 @@ public class ClientServerConfigXMLLoader {
 									info.setType(Integer.parseInt(attr.getTextContent().trim()));
 								}
 							}
-							config.getServers().add(info);
+							config.getConnectServers().add(info);
 						}
 					}
 				}

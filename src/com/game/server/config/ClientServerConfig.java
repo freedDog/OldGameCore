@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClientServerConfig {
-	private List<ServerInfo> servers=new ArrayList<>();
-
-	public List<ServerInfo> getServers() {
-		return servers;
+	private List<ServerInfo> connectServers=new ArrayList<>();
+	
+	public List<ServerInfo> getConnectServers() {
+		return connectServers;
 	}
 
-	public void setServers(List<ServerInfo> servers) {
-		this.servers = servers;
+	public void setConnectServers(List<ServerInfo> connectServers) {
+		this.connectServers = connectServers;
 	}
 }
