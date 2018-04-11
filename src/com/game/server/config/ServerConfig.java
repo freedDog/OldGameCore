@@ -16,7 +16,7 @@ public class ServerConfig {
 	private int webId;
 	private int groupId;
 	private String url;
-	private Date openDate;
+	private Date open;
 	private int type;
 	private String dbFile;
 	private String dbBackupFile;
@@ -57,11 +57,12 @@ public class ServerConfig {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	public Date getOpenDate() {
-		return openDate;
+
+	public Date getOpen() {
+		return open;
 	}
-	public void setOpenDate(Date openDate) {
-		this.openDate = openDate;
+	public void setOpen(Date open) {
+		this.open = open;
 	}
 	public int getType() {
 		return type;

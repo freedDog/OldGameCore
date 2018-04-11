@@ -14,7 +14,7 @@ public abstract class Message extends Bean{
 	private long sendId;
 	private List<Long> toIds=new ArrayList<>();
 	private IoSession session;
-	private long sendTime;
+	private int sendTime;
 	public abstract int getId();
 	public abstract String getQueue();
 	public abstract String getServer();
@@ -36,10 +36,10 @@ public abstract class Message extends Bean{
 	public void setSession(IoSession session) {
 		this.session = session;
 	}
-	public long getSendTime() {
+	public int getSendTime() {
 		return sendTime;
 	}
-	public void setSendTime(long sendTime) {
+	public void setSendTime(int sendTime) {
 		this.sendTime = sendTime;
 	}
 	
