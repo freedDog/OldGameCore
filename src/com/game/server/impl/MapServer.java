@@ -75,7 +75,7 @@ public abstract class MapServer {
 	public void addAfterCommandFilter(ICommandFilter filter) {
 		this.thread.addAfterCommandFilter(filter);
 	}
-	public boolean adddMap(long key,IMap map) {
+	public boolean addMap(long key,IMap map) {
 		this.maps.put(key, map);
 		this.addMapTimerEvent(map);
 		return true;

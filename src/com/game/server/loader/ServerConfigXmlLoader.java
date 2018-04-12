@@ -21,8 +21,8 @@ import com.game.server.config.ServerConfig;
 import com.game.structs.XMLConfigTagName;
 import com.game.utils.DateUtile;
 
-public class ServerXMLLoader {
-	private static final Logger LOGGER=LoggerFactory.getLogger(ServerXMLLoader.class);
+public class ServerConfigXmlLoader {
+	private static final Logger LOGGER=LoggerFactory.getLogger(ServerConfigXmlLoader.class);
 	
 	public List<ServerConfig> load(String file) {
 		try {
@@ -62,7 +62,7 @@ public class ServerXMLLoader {
 						serverConfig.setUrl(nodeText);
 						break;
 					case XMLConfigTagName.SERVER_OPEN:
-						serverConfig.setOpenDate(DateUtile.stringToDate(nodeText));
+						serverConfig.setOpen(DateUtile.stringToDate(nodeText));
 						break;
 					case XMLConfigTagName.SERVER_TYPE:
 						serverConfig.setType(Integer.parseInt(nodeText));

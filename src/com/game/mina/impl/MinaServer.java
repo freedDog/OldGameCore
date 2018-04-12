@@ -25,7 +25,7 @@ import com.game.mina.handler.ServerProtocolHandler;
 import com.game.server.Server;
 import com.game.server.config.MinaServerConfig;
 import com.game.server.loader.MinaServerXMLLoader;
-import com.game.server.loader.ServerXMLLoader;
+import com.game.server.loader.ServerConfigXmlLoader;
 
 public abstract class MinaServer extends Server implements IServer {
 	protected static Logger logger = LoggerFactory.getLogger(MinaServer.class);
@@ -38,7 +38,7 @@ public abstract class MinaServer extends Server implements IServer {
 	List<IoSession> sessions = new ArrayList<>();
 
 	protected MinaServer(String minaServerConfig, String serverConfig, boolean delay) {
-		super(new ServerXMLLoader().load(serverConfig));
+		super(new ServerConfigXmlLoader().load(serverConfig));
 		this.minaServerConfig = new MinaServerXMLLoader().load(minaServerConfig);
 		this.port = this.minaServerConfig.getMina_port();
 		this.ssl_port = this.minaServerConfig.getMina_ssl_port();

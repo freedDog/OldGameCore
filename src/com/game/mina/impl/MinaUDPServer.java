@@ -26,7 +26,7 @@ import com.game.mina.handler.ServerProtocolHandler;
 import com.game.server.Server;
 import com.game.server.config.MinaServerConfig;
 import com.game.server.loader.MinaServerXMLLoader;
-import com.game.server.loader.ServerXMLLoader;
+import com.game.server.loader.ServerConfigXmlLoader;
 
 public abstract class MinaUDPServer extends Server implements IServer {
 	protected Logger logger=LoggerFactory.getLogger(MinaUDPServer.class);
@@ -38,7 +38,7 @@ public abstract class MinaUDPServer extends Server implements IServer {
 	private long delay_time=1;
 	List<IoSession> sessions=new ArrayList<>();
 	protected MinaUDPServer(String minaServerConfig,String serverConfig,boolean delay) {
-		super(new ServerXMLLoader().load(serverConfig));
+		super(new ServerConfigXmlLoader().load(serverConfig));
 		this.minaServerConfig=new MinaServerXMLLoader().load(minaServerConfig);
 		this.delay=delay;
 		this.port=this.minaServerConfig.getMina_port();

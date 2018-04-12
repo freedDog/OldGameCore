@@ -22,7 +22,9 @@ public abstract class Bean {
 	protected void writeShort(IoBuffer buf, short value) {
 		buf.putShort(value);
 	}
-
+	protected void writeShort(IoBuffer buf,int value) {
+		buf.putShort((short)value);
+	}
 	protected void writeInt(IoBuffer buf, int value) {
 		buf.putInt(value);
 	}

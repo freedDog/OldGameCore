@@ -8,20 +8,20 @@ import com.game.server.config.ServerConfig;
 import com.game.utils.ServerKeyUtil;
 
 public abstract class Server implements Runnable{
-	protected ConcurrentHashMap<Integer,ServerConfig> serverConfigs=new ConcurrentHashMap<>();
+	protected ConcurrentHashMap<Integer,ServerConfig> serverConfig=new ConcurrentHashMap<>();
 	public static final String DEFAULT_MAIN_THREAD="Main";
 	protected Server(List<ServerConfig> serverConfigs) {
 		if(serverConfigs!=null) {
 			for(ServerConfig config:serverConfigs) {
-				this.serverConfigs.put(ServerKeyUtil.getServerKey(config.getWebId(), config.getId()),config);
+				this.serverConfig.put(ServerKeyUtil.getServerKey(config.getWebId(), config.getId()),config);
 			}
 		}
 	}
 	public ServerConfig getServerConfig(int serverKey) {
-		return this.serverConfigs.get(serverKey);
+		return this.serverConfig.get(serverKey);
 	}
 	public ConcurrentHashMap<Integer, ServerConfig> getServerConfigs(){
-		return this.serverConfigs;
+		return this.serverConfig;
 	}
 	@Override
 	public void run() {
