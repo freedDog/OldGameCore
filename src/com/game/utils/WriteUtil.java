@@ -13,6 +13,7 @@ public class WriteUtil {
 	public static HashMap<Integer,Long> packagemax;
 	public static HashMap<Integer,Long> packagenums;
 	public static HashMap<Integer,Long> packagemin;
+	public static boolean DEBUG=false;
 	public static void write(List<IoSession> sessions,Message message) {
 		
 	}
